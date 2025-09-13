@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Zap, Target, BarChart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -65,13 +66,24 @@ const Hero = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="animate-slide-up animation-delay-600">
+          <div className="animate-slide-up animation-delay-600 flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
               className="hero-glow text-lg px-8 py-6 hover:scale-105 transition-transform duration-300"
             >
               <Target className="mr-2" size={24} />
               Let's Grow Together
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="text-lg px-8 py-6 hover:scale-105 transition-transform duration-300"
+              asChild
+            >
+              <Link to="/blog">
+                <TrendingUp className="mr-2" size={24} />
+                Marketing Insights
+              </Link>
             </Button>
           </div>
 
